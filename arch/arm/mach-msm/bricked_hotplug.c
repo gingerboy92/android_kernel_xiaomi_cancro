@@ -25,7 +25,7 @@
 #include <linux/module.h>
 #include <linux/device.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
 #define MPDEC_TAG			"bricked_hotplug"
 #define HOTPLUG_ENABLED			1
