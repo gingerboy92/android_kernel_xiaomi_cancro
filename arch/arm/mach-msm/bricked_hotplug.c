@@ -26,7 +26,7 @@
 #include <linux/device.h>
 #include "acpuclock.h"
 
-#define DEBUG 0
+#define DEBUG 1
 
 #define MPDEC_TAG			"bricked_hotplug"
 #define HOTPLUG_ENABLED			1
