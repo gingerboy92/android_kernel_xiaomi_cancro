@@ -16,7 +16,6 @@ obj-$(CONFIG_CPU_FREQ_GOV_ABYSSPLUGV2)	+= cpufreq_abyssplugv2.o
 obj-$(CONFIG_CPU_FREQ_GOV_SMARTASSH3)	+= cpufreq_smartassH3.o
 obj-$(CONFIG_CPU_FREQ_GOV_LIONHEART)    += cpufreq_lionheart.o
 obj-$(CONFIG_CPU_FREQ_GOV_LAGFREE)      += cpufreq_lagfree.o
-obj-$(CONFIG_CPU_FREQ_GOV_LAGFREE)      += cpufreq_blazeactive.o
 obj-$(CONFIG_CPU_BOOST)                 += cpu-boost.o
 
 # CPUfreq cross-arch helpers

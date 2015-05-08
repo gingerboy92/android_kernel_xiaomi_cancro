@@ -32,6 +32,8 @@
 #include <linux/err.h>
 #include <linux/slab.h>
 
+#define cputime64_sub(__a, __b) ((__a) - (__b))
+
 /* greater than 95% avg load across online CPUs increases frequency */
 #define DEFAULT_UP_FREQ_MIN_LOAD			(95)
 
