@@ -140,14 +140,11 @@ static int boost_mig_sync_thread(void *data)
 	unsigned long flags;
 
 	while(1) {
-		ret = wait_event_interruptible(s->sync_wq, s->pending ||
+		wait_event_interruptible(s->sync_wq, s->pending ||
 					kthread_should_stop());
 
 		if (kthread_should_stop())
 			break;
-
-		if (ret == -ERESTARTSYS)
-			continue;
 
 		spin_lock_irqsave(&s->lock, flags);
 		s->pending = false;
