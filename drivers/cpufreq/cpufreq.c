@@ -35,6 +35,9 @@
 
 #include <trace/events/power.h>
 
+#ifdef CONFIG_CPU_FREQ_GOV_ONDEMANDPLUS
+extern unsigned int io_is_busy;
+#endif
 /**
  * The "cpufreq driver" - the arch- or hardware-dependent low
  * level driver of CPUFreq support, and its spinlock. This lock
@@ -176,6 +179,10 @@ u64 get_cpu_idle_time(unsigned int cpu, u64 *wall, int io_busy)
 
 	if (idle_time == -1ULL)
 		return get_cpu_idle_time_jiffy(cpu, wall);
+#ifdef CONFIG_CPU_FREQ_GOV_ONDEMANDPLUS
+	else if (io_busy == 2)
+		idle_time += (get_cpu_iowait_time_us(cpu, wall) / 2);
+#endif
 	else if (!io_busy)
 		idle_time += get_cpu_iowait_time_us(cpu, wall);
 
