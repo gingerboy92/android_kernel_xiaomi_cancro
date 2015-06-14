@@ -244,16 +244,9 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 	  else if [ -x /bin/bash ]; then echo /bin/bash; \
 	  else echo sh; fi ; fi)
 
-<<<<<<< HEAD
 HOSTCC       = $(CCACHE) gcc
 HOSTCXX      = $(CCACHE) g++ -fgraphite -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block
-HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -Ofast -fomit-frame-pointer -fgcse-las -fgraphite -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block
-=======
-HOSTCC       = gcc
-HOSTCXX      = g++
-HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89
-HOSTCXXFLAGS = -O2
->>>>>>> 6c59abf... kernel: use the gnu89 standard explicitly
+HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -Ofast -fomit-frame-pointer -fgcse-las -fgraphite -floop-flatten -floop-parallelize-all -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block -std=gnu89
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -396,17 +389,13 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-<<<<<<< HEAD
 		   -Wno-sizeof-pointer-memaccess \
 		   -mno-unaligned-access \
 		   -fno-delete-null-pointer-checks \
 		   -Wbool-compare \
 		   -pipe
-=======
-		   -fno-delete-null-pointer-checks \
 		   -std=gnu89
 
->>>>>>> 6c59abf... kernel: use the gnu89 standard explicitly
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
