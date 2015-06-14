@@ -5,6 +5,7 @@ BUILD_START=$(date +"%s")
 echo "Removing extra files"
 find . -type f -name '*~' | xargs -n 1 rm
 rm $ZIMAGE
+ccache -C
 echo "Removing Present Modules"
 rm $ZIP_DIR/modules/*
 echo "Building Kernel"
