@@ -7,6 +7,7 @@ find . -type f -name '*~' | xargs -n 1 rm
 rm $ZIMAGE
 ccache -C
 rm $ZIP_DIR/modules/*
+rm $ZIP_DIR/zImage
 echo "Building Kernel"
 make -j2
 echo "Stripping  Modules For Size"
