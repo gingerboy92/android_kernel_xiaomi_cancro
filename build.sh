@@ -9,7 +9,7 @@ rm $ZIMAGE
 rm $ZIP_DIR/modules/*
 rm $ZIP_DIR/zImage
 echo "Building Kernel"
-make -j2
+make -j4
 echo "Stripping  Modules For Size"
 find . -type f -name '*.ko' | xargs -n 1 $COMPILER/arm-eabi-objcopy --strip-unneeded
 echo "Copying Files to zip Directory"
