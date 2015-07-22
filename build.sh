@@ -2,7 +2,7 @@
 ZIP_DIR="zip"
 ZIMAGE="arch/arm/boot/zImage"
 COMPILER="../arm-eabi-5.1/bin/arm-eabi"
-ZIP_NAME=StellAR_$(date +%F)
+ZIP_NAME=StellAR_OC_$(date +%F)
 BUILD_START=$(date +"%s")
 echo "Removing Present files"
 find . -type f -name '*~' | xargs -n 1 rm
