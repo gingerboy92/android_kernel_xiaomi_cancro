@@ -1,7 +1,7 @@
 #!/bin/bash
 ZIP_DIR="zip"
 ZIMAGE="arch/arm/boot/zImage"
-COMPILER="../arm-eabi-5.1/bin/arm-eabi"
+COMPILER="../arm-eabi-6.0/bin/arm-eabi"
 ZIP_NAME=StellAR_OC_$(date +%F)
 BUILD_START=$(date +"%s")
 echo "Removing Present files"
