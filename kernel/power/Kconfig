@@ -25,8 +25,6 @@ config POWERSUSPEND
 	  changes.
 	  
 
->>>>>>> 36831c3... added dt2w implementation for mi3w.. not all changes might be necessary. i will update accordingly
-
 config HIBERNATE_CALLBACKS
 	bool
 
